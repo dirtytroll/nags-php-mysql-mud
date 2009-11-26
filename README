@@ -1,0 +1,62 @@
+/*===== This is a work in progress =====*\
+/*============================================================================*\
+|	NAGS - an AMP (Apache, MySql and PHP) backed mud system
+|	by Terry Valladon
+|
+|	Copyright (C) 2007-2010 by Terry Valladon (get-nags@terryvalladon.com)
+|
+|	This program is free software
+|	you can redistribute it and/or modify
+|	it under the terms of the GNU General Public License as published by
+|	the Free Software Foundation; either version 2, or (at your option)
+|	any later version.
+|
+|	This program is distributed in the hope that it will be useful,
+|	but WITHOUT ANY WARRANTY; without even the implied warranty of
+|	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+|	GNU General Public License for more details.
+|
+|	You should have received a copy of the GNU General Public License
+|	along with this program; if not, write to the Free Software
+|	Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+|
+\*============================================================================*/
+
+Requirements:
+			php5 CLI
+			MySql
+			Linux OS (Mac BSD support is unknown at this time)
+
+Notes:
+			Due to how sockets are used this system can not be used under a windows host.
+			This is a console mode application and will not run under Apache.
+
+Database Defaults:
+			Database Name:		nags
+			Database User name:	nags
+			Database Password:	password
+			
+Account Defaults:
+			***** Change these before you put your system online to public access!!!! *****
+			admin/password
+			guest/password
+			builder/password
+			headbuilder/password
+
+Install Instructions:
+			By whatever means get the files onto the file system (svn, git, unzip, tarball)
+			Create a database.
+			Create a database user.
+			Grant access rights for user to database.
+			Import nags.sql file into database
+			Modify config.php file to set Database Host, Database User, Database Password, Database Name, IP Address, Port and Server Name
+Running Instructions:
+			Run the server using either: ./autorun or php ./nags.php
+				Running the server with php ./nags.php will dump all logging information to the console screen and will not restart if the game
+					server crashes or a "reboot" command is issued.
+				Running the server with ./autorun will dump all logging information to the syslog file and WILL restart if the game crashes or
+					a "reboot" command is issued.
+Access Instructions:
+			Access the server using telnet to the proper ipaddress and port.
+			See the account defaults for login and password information unless you have changed this in your database.
+
